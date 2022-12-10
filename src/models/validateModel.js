@@ -1,12 +1,13 @@
 import { categoryModel } from "./categories.models.js";
 import { customerModel } from "./customers.models.js";
 import { gameModel } from "./games.models.js";
+import { rentalModel } from "./rentals.models.js";
 
 export default class ValidateModel {
 	constructor(obj, modelToValidate) {
 		this.obj = obj;
 		this.modelToValidate = modelToValidate;
-		this.models = { categoryModel, customerModel, gameModel };
+		this.models = { categoryModel, customerModel, gameModel, rentalModel };
 	}
 	get result() {
 		return this.setModel();
@@ -19,6 +20,8 @@ export default class ValidateModel {
 				return this.validateModel(this.models.gameModel, this.obj);
 			case "category":
 				return this.validateModel(this.models.categoryModel, this.obj);
+			case "rental":
+				return this.validateModel(this.models.rentalModel, this.obj);
 			default:
 				return this.validateModel();
 		}
