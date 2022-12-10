@@ -14,11 +14,7 @@ const router = Router();
 
 router.get("/customers", getCustomers);
 router.get("/customers/:id", getCustomersById);
-
-router.use(validatePayload);
-router.use(isInDatabase);
-
-router.post("/customers", postCustomers);
-router.put("/customers/:id", updateCustomers);
+router.post("/customers", validatePayload, isInDatabase, postCustomers);
+router.put("/customers/:id", validatePayload, isInDatabase, updateCustomers);
 
 export default router;
