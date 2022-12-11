@@ -2,7 +2,7 @@ import { connection } from "../database/database.js";
 import ValidateModel from "../models/validateModel.js";
 
 export const validatePayload = (req, res, next) => {
-	const validation = new ValidateModel(req.body, "category");
+	const validation = new ValidateModel(req.body, "categories");
 	const { status, ...rest } = validation.result;
 	if (!status) {
 		return res.status(400).send(rest);

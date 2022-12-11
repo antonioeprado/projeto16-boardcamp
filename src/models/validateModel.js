@@ -18,9 +18,9 @@ export default class ValidateModel {
 				return this.validateModel(this.models.customerModel, this.obj);
 			case "games":
 				return this.validateModel(this.models.gameModel, this.obj);
-			case "category":
+			case "categories":
 				return this.validateModel(this.models.categoryModel, this.obj);
-			case "rental":
+			case "rentals":
 				return this.validateModel(this.models.rentalModel, this.obj);
 			default:
 				return this.validateModel();
